@@ -40,8 +40,12 @@ the region). Two environment variables are required in the Vercel project:
 | `GITHUB_AUTH_TOKEN` | a GitHub token | Read-only public scope is enough; 5000 requests/hour. |
 | `APP_ENV` | `production` | Turns on JSON logs and gin release mode. |
 
-The GitHub App triple (`GITHUB_APP_ID`, `GITHUB_APP_INSTALLATION_ID`,
-`GITHUB_APP_PRIVATE_KEY`) can be set instead of `GITHUB_AUTH_TOKEN`.
+Alternatively the GitHub App triple (`GITHUB_APP_ID`, `GITHUB_APP_INSTALLATION_ID`
+and `GITHUB_APP_PRIVATE_KEY`) can be set instead of `GITHUB_AUTH_TOKEN`.
+
+This project was bootstrapped from a deployment, so Vercel does not redeploy on
+push yet: connect the repository once in Project → Settings → Git, after which
+every push to `main` ships.
 
 Rendered images and contributor lists are kept in an in-process LRU cache (300
 entries), so repeated requests are free and GitHub API usage stays low without
